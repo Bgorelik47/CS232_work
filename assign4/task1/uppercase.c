@@ -1,23 +1,31 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-/* example:
- *  char str[10090];
-   int ch, n = 0;
 
-   while ((ch = getchar()) != EOF && n < 1000) {
-      str[n] = ch;
-      ++n;
+  char str[10090];
+   int n = 0;
+
+   printf("Enter your string "); 
+     scanf("%[^\n]", str);
+
+
+   while (str[n] != '\0' ) {
+
+      if( str[n] >= 'a' && str[n] <= 'z'){
+
+        str[n] = str[n] - 32;
+
+      }
+    n++;
    }
 
-   for (int i = 0; i < n; ++i)
-      putchar(str[i]);
+  printf("The upper case version is: "); 
+  puts(str);
+
 
 
    return 0;
 
- */
 
-    return 0;
+
 }
-
