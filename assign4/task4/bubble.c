@@ -1,15 +1,35 @@
 /* Example: bubble sort strings in array */
 #include <stdio.h>  /* Need for standard I/O functions */
 #include <string.h> /* Need for strlen() */
-
+#include <stdlib.h>
 
 #define NUM 30   /* number of strings */
 #define LEN 1200  /* max length of each string */
 
 
+int compare(char string1[], char string2[]) {
+  for (int i = 0; i < LEN - 2 ; i++) {
+	if (string1[i] < string2[i]) {
+		return -1;
+	} else if (string1[i] > string2[i]) {
+		return 1;
+	}
+  }
+  return 0;
+}
+
+void swap(char string1[], char string2[]) {
+  char temp;    
+  for (int i = 0; i < LEN; i++) {
+	temp = string1[i];
+	string1[i] = string2[i];
+	string2[i] = temp;
+  }
+}
+
 int main()
 {
-  char * Strings[NUM];
+  char *Strings[NUM];
 
   printf("Please enter %d strings, one per line:\n", NUM);
 
@@ -19,14 +39,14 @@ int main()
 	 Note that the newline and NULL characters will be included in LEN.
   */
    for(int i = 0; i < NUM; i++){
-     fgets(*Strings, LEN, stdin);
+     Strings[i] = malloc(LEN);  //this wastes space
+     fgets(Strings[i], LEN, stdin);
    }
   puts("\nHere are the strings in the order you entered:");
 
-
   /* Write a for loop here to print all the strings. */
     for(int i=0; i < NUM; i++){
-    printf("%s",Strings[i]);
+    printf("%s", Strings[i]);
     }
   
   /* Bubble sort */
@@ -41,15 +61,15 @@ int main()
       (iii) You are allowed to use strlen() to calculate string lengths.
   */
 
-  for(int i = 0; i < NUM; i++){
-    char *temp = Strings[i + 1]; 
-    char *temp2 = Strings[i]; 
-    for(int j = 0; j < strlen(temp)-1; j++){
-     if(temp[j]!= temp2[j]){
-       //swap position of strings
-       int t = *Strings[i];
-       *Strings[i] = *Strings[i + 1];
-       *Strings[i + 1] = t; 
+  for(int i = NUM - 1; i > 0; i--){
+    for(int j = 0; j < NUM; j++){
+     if(j == NUM - 1){
+       break;
+     }
+     if(compare(Strings[j], Strings[j+1]) == 1){
+       char* temp = Strings[j];
+       Strings[j] = Strings[j+1];
+       Strings[j+1] = temp;
      }
     }
   }
@@ -61,6 +81,9 @@ int main()
      etc. for printing each string.
   */
   for(int i=0; i < NUM; i++){
-    printf("%s",Strings[i]);
+    printf("%s", Strings[i]);
+    free(Strings[i]);
     }
+    
 }
+
