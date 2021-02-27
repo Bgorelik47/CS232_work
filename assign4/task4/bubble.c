@@ -23,6 +23,7 @@ int main()
    }
   puts("\nHere are the strings in the order you entered:");
 
+
   /* Write a for loop here to print all the strings. */
     for(int i=0; i < NUM; i++){
     printf("%s",Strings[i]);
