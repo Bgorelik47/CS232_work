@@ -5,7 +5,7 @@ int main(int argc, char *argv[]) {
   char str[10090];
    int n = 0;
 
-   printf("Enter your string \n"); 
+   //printf("Enter your string \n"); 
      scanf("%[^\n]", str);
 
 
@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     n++;
    }
 
-  printf("The upper case version is: \n"); 
+  //printf("The upper case version is: \n"); 
   puts(str);
 
 

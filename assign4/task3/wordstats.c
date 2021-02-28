@@ -4,34 +4,38 @@
 
 int main () {
 
-   puts("Type some text (then ENTER):");
   /* Zero out the array */
   int letter_frequency[26] = {0};
+  int i, index, len;
   char buf[MAX_BUF];
-  int i = 0, len = 0;
-
-  printf("Enter your string "); 
-  fgets(buf, MAX_BUF, stdin);
-  len = strlen(buf) - 1;
   
-  while (buf[i] != '\0') {
-   
-      if (buf[i] >= 'a' && buf[i] <= 'z') {
-        buf[i] = buf[i] - 32;
-         len = buf[i] - 'A';
-         letter_frequency[len]++;
-      }
-      else if(buf[i] >= 'A' && buf[i] <= 'Z'){
-         len = buf[i] - 'A';
-         letter_frequency[len]++;
-      }
-      i++;
+do{
+  if(fgets(buf, MAX_BUF, stdin) == NULL){
+    break;
   }
-  
-  printf("Distribution of letters in corpus:\n");
+len = strlen(buf);
+index = len - 1; 
+
+  do{
+      if (buf[index] >= 'a' && buf[index] <= 'z') 
+      {
+         buf[index] = buf[index]- 32;
+         letter_frequency[buf[index]-'a']++;
+      }
+      if(buf[index] >= 'A' && buf[index] <= 'Z')
+      {
+         letter_frequency[buf[index]-'A']++;
+      }
+   index--;
+  }while(index >= 0);
+
+}while(len > 1);
+
+
+  printf("\nDistribution of letters in corpus:\n");
   for (i = 0; i < 26; i++) {
+    
     // 'A' is ASCII code 65
     printf("%c: %d\n", 65+i, letter_frequency[i]);
   }
-      return 0;
 }

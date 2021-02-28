@@ -18,15 +18,6 @@ int compare(char string1[], char string2[]) {
   return 0;
 }
 
-void swap(char string1[], char string2[]) {
-  char temp;    
-  for (int i = 0; i < LEN; i++) {
-	temp = string1[i];
-	string1[i] = string2[i];
-	string2[i] = temp;
-  }
-}
-
 int main()
 {
   char *Strings[NUM];
@@ -39,7 +30,7 @@ int main()
 	 Note that the newline and NULL characters will be included in LEN.
   */
    for(int i = 0; i < NUM; i++){
-     Strings[i] = malloc(LEN);  //this wastes space
+     Strings[i] = malloc(sizeof(char));  
      fgets(Strings[i], LEN, stdin);
    }
   puts("\nHere are the strings in the order you entered:");
