@@ -34,7 +34,7 @@ index = len - 1;
 
 
 
-  printf("\nDistribution of letters in corpus:\n");
+  printf("Distribution of letters in corpus:\n");
   for (i = 0; i < 26; i++) {
     
     // 'A' is ASCII code 65
