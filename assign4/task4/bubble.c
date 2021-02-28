@@ -29,9 +29,9 @@ int main()
 	   be LEN bytes long.  
 	 Note that the newline and NULL characters will be included in LEN.
   */
-   for(int i = 0; i < NUM; i++){
-     Strings[i] = malloc(sizeof(char));  
-     fgets(Strings[i], LEN, stdin);
+   for(int i = 0; i < NUM; i++){ 
+     Strings[i] = malloc(LEN); 
+     fgets(Strings[i], LEN, stdin); 
    }
   //puts("\nHere are the strings in the order you entered:");
 
