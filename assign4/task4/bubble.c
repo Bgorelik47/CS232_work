@@ -32,6 +32,7 @@ int main()
    for(int i = 0; i < NUM; i++){ 
      Strings[i] = malloc(LEN); 
      fgets(Strings[i], LEN, stdin); 
+     Strings[i] = realloc(Strings[i], strlen(Strings[i]) + 1);
    }
   //puts("\nHere are the strings in the order you entered:");
 
