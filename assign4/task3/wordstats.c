@@ -32,6 +32,8 @@ index = len - 1;
 }while(len > 1);
 
 
+
+
   printf("\nDistribution of letters in corpus:\n");
   for (i = 0; i < 26; i++) {
     
