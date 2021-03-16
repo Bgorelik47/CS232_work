@@ -10,11 +10,8 @@ long printSumRangeIterative(int start, int stop)
     long sum = 0;
     for(i = start; i < stop; i++) {
         //printf("%d\n", i);
-<<<<<<< HEAD
-	sum += i;
-=======
 	      sum += i;
->>>>>>> ca4fe2cc205b888a6017e01586bdf7d643e6a7b4
+
     }
     return sum;
 }
