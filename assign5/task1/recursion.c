@@ -10,7 +10,7 @@ printSumRangeIterative(int start, int stop)
     int i;
     long sum = 0;
     for(i = start; i < stop; i++) {
-        printf("%d\n", i);
+        //printf("%d\n", i);
 	sum += i;
     }
     return sum;
@@ -21,7 +21,7 @@ printSumRangeRecursive(int start, int stop)
 {
     long sum=0;
     if(start < stop) {
-        printf("%d\n", start);
+        //printf("%d\n", start);
         sum=start+printSumRangeRecursive(start+1, stop);
 
     }
