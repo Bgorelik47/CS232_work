@@ -1,0 +1,1 @@
+We see that every time we run the method the address of the variable decreases by a byte size of four. As such the stack frame, being each itertation as start increases by 1, takes up four bytes of space.
