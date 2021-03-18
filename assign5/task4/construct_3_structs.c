@@ -13,20 +13,48 @@ node_t * setup() {
     //Dereference each pointer to access the .next field in its pointee, 
     //and use pointer assignment to set the .next field to point to the appropriate Node. 
     
+    node_t * node1 ;
+    node_t * node2 ;
+    node_t * node3 ;
+
+    node1 = malloc(sizeof(node_t));
+    node2 = malloc(sizeof(node_t));
+    node3 = malloc(sizeof(node_t));
+
+    node1->length = 5;
+    node2->length = 5;
+    node3->length = 4;
+
+    strcpy(node1->str, "hello");
+    strcpy(node2->str, "there");
+    strcpy(node3->str, "prof");
+
+    head = node1;
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = NULL;
+
+
+
+    
    return head;
 }
 
-void teardown(/*what parameter?*/) {
+void teardown(node_t* head) {
     //TODO: free all dynamic memory you requested.
     //Please complete the prototype of teardown.
     //You are not allowed to use globals
+
+    free(head);
+
+
 }
 
 void dump_all(node_t*);
 int main (int argc, char ** argv) {
     node_t * head = setup();
     dump_all(head);
-    teardown(/*what argument?*/);
+    teardown(head);
     return 0;
 }
 
