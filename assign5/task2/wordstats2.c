@@ -6,12 +6,11 @@ int main () {
 
   /* Zero out the array */
   int counters[7] = {0};
-  int i, len = 0;
+  int i;
   char buf[MAX_BUF];
-  len = strlen(buf) - 1;
-    
+
    while(fgets(buf,MAX_BUF,stdin)){
-     for(i = 0; i <= len; i++)
+     for(i = 0; i < strlen(buf); i++)
      {
         if(buf[i] >= 'A' && buf[i] <= 'Z')
         {
