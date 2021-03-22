@@ -29,7 +29,10 @@ node_t * setup() {
 }
 
 void teardown(node_t* head) {
-     free(head);
+    free(head->next->next->next);
+    free(head->next->next);
+    free(head->next);
+    free(head);
 }
 
 void add(node_t ** head, char * str, int length){

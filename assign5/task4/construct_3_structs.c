@@ -5,14 +5,6 @@ typedef struct snode node_t;
 
 node_t * setup() {
     node_t * head ;
-    //TODO:head declared for you
-    //Allocate three more pointers
-    //head for the first Node, and temporary pointers node1, node2 and node3
-    //Allocate three node pointees and store references to them in the three pointers
-    //Dereference each pointer to store the appropriate number and string into the length and str fields in its pointee.
-    //Dereference each pointer to access the .next field in its pointee, 
-    //and use pointer assignment to set the .next field to point to the appropriate Node. 
-    
     node_t * node1 ;
     node_t * node2 ;
     node_t * node3 ;
@@ -34,19 +26,13 @@ node_t * setup() {
     node2->next = node3;
     node3->next = NULL;
 
-
-
-    
    return head;
 }
 
 void teardown(node_t* head) {
-    //TODO: free all dynamic memory you requested.
-    //Please complete the prototype of teardown.
-    //You are not allowed to use globals
-
-    free(head);
-
+   free(head->next->next);
+   free(head->next);
+  free(head);
 
 }
 
