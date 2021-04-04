@@ -4,6 +4,7 @@
 typedef struct snode node_t;
 
 node_t * setup() {
+<<<<<<< HEAD
     node_t * head ;
     node_t * node1 ;
     node_t * node2 ;
@@ -26,6 +27,9 @@ node_t * setup() {
     node2->next = node3;
     node3->next = NULL;
    return head;
+=======
+    //TODO:copy setup func from previous task
+>>>>>>> ebf5960dd206972324ad32f3523702e63dec4dea
 }
 
 void teardown(node_t* head) {
