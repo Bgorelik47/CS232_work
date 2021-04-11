@@ -1,0 +1,13 @@
+Step 1: Since nx is 1, X bits would get inverted.
+X is 9 and in binary it would be: 0000 1001. After flipping the bits,
+X would be equal to: 1111 0110.
+
+Step 2: Since f is 1, we would do the operation ADD X+Y. 
+Our current X is 1111 0110 and our current Y is 5 or 0000 0101.
+Adding those two together yields: 1111 1011. 
+
+Step 3: In the last step, since no is 1, the current output would become 
+inverted. 1111 1011 would become 0000 0100 or 4.
+
+This proves that this combination of control flags would yield the output
+X-Y or 9-5. 
