@@ -1,8 +1,15 @@
 1.What instruction is “int a, b, c, d;” converted to? 
 
+ int a,b,c,d; is converted into, "subl $16,%esp"
+
 2.Does “int a, b, c, d;” shrink or grow the stack? How many bytes are allocated on stack for a, b, c, and d? Explain them using instruction from question 1.
+
+int a,b,c,d; grows the stack allocating 16 bytes, 4 bytes for each variable. subl moves the pointer of the stack 16 bytes down, and as a stack grows top to bottom, it is allocating space for the variables.
 
 3.What instruction is “b=2;” converted to? How is the address of variable b formed in the instruction?
 
+b=2; is converted to into, "movl $2,-8(%ebp)".As ebp points to the top of the stack, the instructions is moving the value of two, 8 bytes down from the top of the stack, or in mathematical terms where digits are byte addresses, 0 + -8;
+
 4.Based on the instructions converted from four assignments, can we claim the declaration order determines the allocation order? For instance, a is declared before b, does it mean a is to be allocated before b on stack? Verify your theory by changing the declaration to “int a, c, b, d;”
 
+The order in which variables are declared defines the order in which they will be stored in the stack. If you input a,c,b,d it will store c 8 bytes down. The order in which values are given to variables does not matter in affecting the variables stored position. if you declare a first, and lets say you give a the value of 3 after 4 other variables, a will still be 4 bytes below the top of the stack as declaration is what affects the space it is stored in. 
