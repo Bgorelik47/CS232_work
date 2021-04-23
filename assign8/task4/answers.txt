@@ -1,3 +1,6 @@
 1.By searching the function name “strcmp” in the assembly text, what instruction calls strcmp?
+
+ "call strcmp" calls strcmp.
+
 2.Where is the password “secret” stored?
 
