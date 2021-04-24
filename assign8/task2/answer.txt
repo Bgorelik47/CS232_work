@@ -1,2 +1,3 @@
 What instructions is “c=a+b;” converted to?
 
+c=a+b is converted into  "movl -4(%ebp),%eax", "addl -8(%ebp),%eax", "movl %eax,-12(%ebp)"
