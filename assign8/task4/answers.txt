@@ -2,7 +2,11 @@
 
  "call strcmp" calls strcmp.
 
+<<<<<<< HEAD
 2. What does leal -8(%ebp),%eax right before call strcmp do?
 
 In leal -8(%ebp),%eax it is doing numeric subtraction, assigning to %eax the value of %ebp - 8. 
+=======
+2.Where is the password “secret” stored?
+>>>>>>> dc2b7384ef340a21ef77aa7a56e058237dda1bf9
 

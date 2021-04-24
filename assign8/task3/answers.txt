@@ -3,6 +3,7 @@
 a > 6 is converted into, "cmpl $6,-4(%ebp)".
 
 2.What happens if we delete the “jmp” instruction?
+<<<<<<< HEAD
 
 If we suppose jmp was deleted, but the code remained, then the if else stamtnet would become useless. The jmp prevents the entire statment from occuring if the first condition is met, but without the jmp the entire if else statment occurs, changing c from c=2, to c=0 because of c-=2.
 
@@ -17,3 +18,11 @@ if(a<=6){
 else{
   b=15;
 }
+=======
+
+If we suppose jmp was deleted, but the code remained, then the if else stamtnet would become useless. The jmp prevents the entire statment from occuring if the first condition is met, but without the jmp the entire if else statment occurs, changing c from c=2, to c=0 because of c-=2.
+
+3.Can you rewrite the condition with “jg” in place of “jle” without changing semantic of the program? Why or why not?
+
+jg can not be used to replace jle, as jle jump if less than or equal to, and jg is jump if greater than.
+>>>>>>> dc2b7384ef340a21ef77aa7a56e058237dda1bf9
