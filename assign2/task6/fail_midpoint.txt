@@ -1,0 +1,4 @@
+I used [-1000000] and [1000000000000] to fail midpoint_A test. It failed because [-1000000] is [-0xF4240] and [1000000000000] is [E8D4A51000] so the midpoint of [-1000000] and [1000000000000] is expected to be [746A4AE6E0]. However, midpoint_A failed when it computes [y-x]. [y-x] is supposed to yield [E8D4B45240] yet this number is larger than the maximum number an integer can have, causing overflow. Becuase of this, the final answer became [-0x15B51920].  
+
+
+I used [-1000000] and [1000000000000] to fail midpoint_original test. It failed because [-1000000] is [-0xF4240] and [1000000000000] is [E8D4A51000] so the midpoint of [-1000000] and [1000000000000] is expected to be [746A4AE6E0]. However, midpoint_original failed while computing sum x + y since its true value [E8D495CDC0] is a number larger than the maximum an int can have. This results in overflow and causes [x+y] to be [-2B6A3240], therefore making the final output to be [-0x15B51920].  
